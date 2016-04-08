@@ -17,4 +17,10 @@ Route::get('/', function () {
 
 Route::get('/home',['as'=>'home','uses'=>'HomeController@index']);
 
+Route::get('/hangouts',function(){
+    return view('hangouts');
+});
 
+Route::get('/webrtc',function(){
+    return view('webrtc');
+});
