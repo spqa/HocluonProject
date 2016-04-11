@@ -7,7 +7,8 @@
 <body>
 
 <h1>Webrtc Tokbox</h1>
-<p>This is a paragraph.</p>
+<div id='myPublisherDiv'></div>
+<div id='subscribersDiv'></div>
 <script>
     var apiKey = '45543832';
     var sessionId = '1_MX40NTU0MzgzMn5-MTQ2MDEzMjMwNTMyNX4yRWZDbWUxNHFOVTVyK1VSTWN3alc2akl-fg';

@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'WelcomeController@index');
+Route::get('index', function(){
+    return view('index');
 });
 
 Route::get('/home',['as'=>'home','uses'=>'HomeController@index']);
@@ -24,3 +25,7 @@ Route::get('/hangouts',function(){
 Route::get('/webrtc',function(){
     return view('webrtc');
 });
+
+Route::resource('lists','ListsController');
+
+Route::get('test','test\BladeController@index');
