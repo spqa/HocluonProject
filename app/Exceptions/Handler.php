@@ -33,7 +33,12 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        parent::report($e);
+        if ($e instanceof ModelNotFoundException){
+            return$this->renderModelNotFoundException($e);
+        }else{
+            return parent::report($e);
+        }
+
     }
 
     /**
@@ -46,5 +51,14 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         return parent::render($request, $e);
+    }
+
+    protected function renderModelNotFoundException(ModelNotFoundException $e){
+        if (view()->exists('errors.404')){
+            return response()->view('errors.404',[],404);
+        }else{
+            return (new SymfonyDisplayer(config('app.debug')))
+                ->createRespone($e);
+        }
     }
 }

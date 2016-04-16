@@ -10,22 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/hangouts','HangoutsController@index');
 
-Route::get('/', 'WelcomeController@index');
-Route::get('index', function(){
-    return view('index');
-});
+Route::get('/webrtc','WebrtcController@index');
 
-Route::get('/home',['as'=>'home','uses'=>'HomeController@index']);
+Route::resource('/','IndexController@index');
 
-Route::get('/hangouts',function(){
-    return view('hangouts');
-});
-
-Route::get('/webrtc',function(){
-    return view('webrtc');
-});
-
-Route::resource('lists','ListsController');
+Route::get('/search','IndexController@search');
 
 Route::get('test','test\BladeController@index');
+
+Route::resource('list','RestfulController');
+Route::get('welcome','WelcomeController@index');

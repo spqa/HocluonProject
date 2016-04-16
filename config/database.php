@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'sqlsrv'),
 
     /*
     |--------------------------------------------------------------------------
@@ -76,6 +76,17 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
+        ],
+
+        'sqlsrv'=>[
+          'driver'=>'sqlsrv',
+            'host'=>env('DB_HOST','localhost'),
+            'database'=>env('DB_DATABASE','localhost'),
+            'username'=>env('DB_USERNAME','localhost'),
+            'password'=>env('DB_PASSWORD','localhost'),
+            'charset'=>'utf8',
+            'prefix'=>'',
+            'schema'=>'public',
         ],
 
     ],

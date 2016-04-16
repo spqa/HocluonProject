@@ -1,5 +1,6 @@
 @extends('layouts.mainlayout')
 @section('content')
+
     <div class="content-bg">
         <div class="wrap">
             <div class="content">
@@ -41,14 +42,12 @@
                         </div>
                     </div>
                 </div>
-                <a class="title-become-faculty" href="">Hãy trở thành người dạy để chia sẻ kiến thức và kiếm tiền ngay!
-                    <span>Click</span></a>
+                <a class="title-become-faculty" href="">Hãy trở thành người dạy để chia sẻ kiến thức và kiếm tiền ngay! <span>Click</span></a>
                 <br>
                 <br>
                 <div class="cnt-btm">
                     <h3 class="left">Kết quả tìm kiếm</h3>
-                    <h3 class="right">show&nbsp;<span><a class="a-show-all show-all-results-search-home-page"
-                                                         href="details.html">all</a></span></h3>
+                    <h3 class="right">show&nbsp;<span><a class="a-show-all show-all-results-search-home-page" href="details.html">all</a></span></h3>
                     <select name="sort-search-results" id="sort-search-results">
                         <option value="">Sắp xếp theo lượt like</option>
                         <option value="">Sắp xếp theo giá tăng</option>
@@ -56,24 +55,46 @@
                     </select>
                     <div class="clear"></div>
                 </div>
-                <div class="section group search-results-home-page">
-@foreach($user as $item)
-                        <div class="grid_1_of_3 images_1_of_3">
-                            <a href="details.html"><img src="{{$item->userimg->link}}" alt=""></a>
-                            <a href="" class="faculty-name">{{$item->name}}</a>
-                            <p class="faculty-price"><span>300</span>đ/<span>1</span>phút &nbsp; (Miễn phí <span>5</span> phút dạy đầu tiên)</p>
-                            <p>{{$item->profile->description}}</p>
-                            <p><a class="like-home-page">{{$item->usercount->totallikes}} likes</a><a class="dislike-home-page">{{$item->usercount->totaldislikes}} dislikes</a><a class="comment-home-page">10 comments</a></p>
-                            <div class="button"><span><a href="details.html" class="avaiable-button">Chat luôn</a></span></div>
+            </div>
+            <div id="listRestful">
+                <h2> Todolists</h2>
+                <table style="border: 1px solid black">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Desription</th>
+                        <th>Created</th>
+                        <th>Updated</th>
+                    </tr>
+                    @if($lists->count()>0)
+                        @foreach($lists as $item)
+                            <tr>
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->description}}</td>
+                                <td>{{$item->created_at}}</td>
+                                <td>{{$item->updated_at}}</td>
+                            </tr>
+                        @endforeach
+                    @endif
+                </table>
+                <div>
+                    {{$lists->currentPage().
+                    $lists->count().
+                    $lists->hasMorePages().
+                    $lists->lastPage().
+                    $lists->nextPageUrl().
+                    $lists->perPage()
+                    }}
+                    <div class="section group">
+                        <div class="grid_3_of_3 images_3_of_3">
+                            {!! with(new \App\Pagination($lists))->render() !!}
                         </div>
-@endforeach
-                </div>
-                <div class="section group">
-                    <div class="grid_3_of_3 images_3_of_3">
-{!! with(new \App\Pagination($user))->render() !!}
                     </div>
+                    {!! $lists->render() !!}
                 </div>
             </div>
         </div>
     </div>
-@endsection
+
+    @endsection

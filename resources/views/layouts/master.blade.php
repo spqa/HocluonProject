@@ -4,7 +4,7 @@
     <title>The Free Techno Website Template | 404 :: w3layouts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -19,9 +19,9 @@
                 <li><a href="contact.html">LIÊN HỆ</a></li>
             </ul>
             <!--nav-->
-            <script src="js/jquery.min.js" type="text/javascript"></script>
-            <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-            <script type="text/javascript" src="js/jquery.spasticNav.js"></script>
+            <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
+            <script type="text/javascript" src="{{asset('js/jquery-ui.min.js')}}"></script>
+            <script type="text/javascript" src="{{asset('js/jquery.spasticNav.js')}}"></script>
             <script type="text/javascript">
                 $('#nav').spasticNav();
             </script>
@@ -32,24 +32,25 @@
 <div class="wrap">
     <div class="header">
         <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="" title="logo"></a>
+            <a href="index.html">
+                <img src="images/logo.png" alt="" title="logo">
+                <p>Kết nối trực tuyến người dạy và người học mọi lúc mọi nơi!</p>
+            </a>
         </div>
         <ul class="soc-icons">
-            <li><a href=""><img src="images/facebook.png" title="facebook" alt=""/></a></li>
-            <li><a href=""><img src="images/twitter.png" title="twitter" alt="" /></a></li>
-            <li><a href=""><img src="images/youtube.png" title="youtube" alt=""/></a></li>
-            <li><a href=""><img src="images/rss.png" title="rss" alt="" /></a></li>
+            <li class="login"><a href="#">Đăng nhập &nbsp;/</a></li>
+            <li class="register"><a href="#">Đăng ký</a></li>
+            <li class="avatar-homepage" style="display:none;"><a href="">Hi!<img src="images/icon_login.png" title="avatar" alt=""></a></li>
+            <li><a href=""><img src="images/facebook.png" title="facebook" alt=""></a></li>
+            <li><a href=""><img src="images/twitter.png" title="twitter" alt=""></a></li>
+            <li><a href=""><img src="images/youtube.png" title="youtube" alt=""></a></li>
+            <li><a href=""><img src="images/rss.png" title="rss" alt=""></a></li>
         </ul>
         <div class="clear"></div>
     </div>
-</div>
-<div class="content-bg">
-    <div class="wrap">
 
-        @yield('content')
-
-    </div>
 </div>
+@yield('content')
 
 @yield('UniqueFooter')
 

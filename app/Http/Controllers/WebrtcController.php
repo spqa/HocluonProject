@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class HangoutsController extends Controller
+class WebrtcController extends Controller
 {
-    //
     public function index(){
-        return view('test.hangouts');
+        return view('test.webrtc');
     }
 }
