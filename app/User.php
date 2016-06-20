@@ -11,6 +11,9 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function teachers (){
+        return $this->belongsToMany('app\Teacher');
+    }
     protected $fillable = [
         'name', 'email', 'password',
     ];
