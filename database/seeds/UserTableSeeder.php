@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder{
 //            ]));
 
             DB::table('users')->insert([
-                'name' => $faker->sentence(2),
+                'name' => $faker->name(),
                 'email' => str_random(10).'@gmail.com',
                 'password' => bcrypt('secret'),
             ]);

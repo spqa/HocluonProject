@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+    public $timestamps=false;
     //
     public function teachers(){
-        return $this->belongsToMany('app\Teacher');
+        return $this->belongsToMany('App\Teacher');
     }
 }

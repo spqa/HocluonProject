@@ -22,3 +22,4 @@ Route::get('test','test\BladeController@index');
 
 Route::resource('list','RestfulController');
 Route::get('welcome','WelcomeController@index');
+Route::get('search','');

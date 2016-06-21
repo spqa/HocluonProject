@@ -5,7 +5,7 @@
             <div class="content">
                 <div class="section group">
                     <div class="span_3_of_3 images_3_of_3">
-                        <form method="get" id="search" action="https://www.google.com">
+                        <form method="get" id="search" action="{{url('/search')}}">
                             <h4>Tìm kiếm và lựa chọn người dạy đang online để chat trực tuyến</h4>
                             <br>
                             <input type="text" class="search" placeholder="Bạn cần học gì?">

@@ -8,10 +8,10 @@ class Teacher extends Model
 {
     //
     public function users (){
-        return $this->belongsToMany('app\Teacher');
+        return $this->belongsToMany('App\Teacher');
     }
 
     public function tags (){
-        return $this->belongsToMany('app\Tag');
+        return $this->belongsToMany('App\Tag');
     }
 }
