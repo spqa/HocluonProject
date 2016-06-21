@@ -27,23 +27,24 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function profile(){
-        return $this->hasOne('App\Profile');
-    }
+//    public function profile(){
+//        return $this->hasOne('App\Profile');
+//    }
+//
+//    public function userimg(){
+//        return $this->hasOne('App\Userimg');
+//    }
+//
+//    public function userlike(){
+//        return $this->hasMany('App\Userlike');
+//    }
+//
+//    public function userdislike(){
+//        return $this->hasMany('App\Userdislike');
+//    }
+//    
+//    public function  usercount(){
+//        return $this->hasOne('App\Usercount');
+//    }
 
-    public function userimg(){
-        return $this->hasOne('App\Userimg');
-    }
-
-    public function userlike(){
-        return $this->hasMany('App\Userlike');
-    }
-
-    public function userdislike(){
-        return $this->hasMany('App\Userdislike');
-    }
-    
-    public function  usercount(){
-        return $this->hasOne('App\Usercount');
-    }
 }

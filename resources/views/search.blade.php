@@ -63,20 +63,20 @@
                             <a href="" class="faculty-name">{{$item->first_name.' '.$item->last_name}}</a>
                             <p class="faculty-price"><span>{{$item->skill}}</span></p>
                             <p>{{$item->description}}</p>
-                            <p><a class="like-home-page">Rating: {{$item->statistical->responses}}</a><a class="dislike-home-page">
-                                    Tags:@foreach($item->tags as $tag)
-                                             <code style="background-color: #491c47">{{$tag->tag_content}}</code>
-                                             @endforeach
-                                </a><a class="comment-home-page">10 comments</a></p>
+                            {{--<p><a class="like-home-page">Rating: {{$item->statistical()->}}</a><a class="dislike-home-page">--}}
+                                    {{--Tags:@foreach($item->tags as $tag)--}}
+                                             {{--<code style="background-color: #491c47">{{$tag->tag_content}}</code>--}}
+                                             {{--@endforeach--}}
+                                {{--</a><a class="comment-home-page">10 comments</a></p>--}}
                             <div class="button"><span><a href="details.html" class="avaiable-button">Chat luôn</a></span></div>
                         </div>
-@endforeach
+                    @endforeach
                 </div>
                 <div class="section group">
                     <div class="grid_3_of_3 images_3_of_3">
-                        @if(isset($pagetest))
+
 {!! with(new \App\Pagination($teacher))->render() !!}
-                            @endif
+
                     </div>
                 </div>
             </div>

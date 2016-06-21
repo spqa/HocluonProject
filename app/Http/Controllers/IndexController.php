@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Teacher;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,10 @@ class IndexController extends Controller
 
     public function index()
     {
-        $user = User::with('profile','userimg',"usercount")->paginate(6);
-
+        //$user = User::with('profile','userimg',"usercount")->paginate(6);
+        $teacher=Teacher::with(['statistical','tags'])->paginate(6);
+        
+        //dd($teacher);
         //$data = array();
 
 //        foreach ($listUser as $user){
@@ -27,6 +30,6 @@ class IndexController extends Controller
 //        }
         //$data->paginate(9);
 
-        return view('index')->with('user', $user);
+        return view('index')->with('teacher', $teacher);
     }
 }
