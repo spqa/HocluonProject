@@ -41,8 +41,8 @@
                         </div>
                     </div>
                 </div>
-                <a class="title-become-faculty" href="">Hãy trở thành người dạy để chia sẻ kiến thức và kiếm tiền ngay!
-                    <span>Click</span></a>
+                <a class="title-become-faculty" href="">Tìm kiếm và lựa chọn người dạy bên dưới để học trực tuyến miễn phí!
+                    <!--<span>Click</span></a>-->
                 <br>
                 <br>
                 <div class="cnt-btm">
@@ -50,9 +50,8 @@
                     <h3 class="right">show&nbsp;<span><a class="a-show-all show-all-results-search-home-page"
                                                          href="details.html">all</a></span></h3>
                     <select name="sort-search-results" id="sort-search-results">
-                        <option value="">Sắp xếp theo lượt like</option>
-                        <option value="">Sắp xếp theo giá tăng</option>
-                        <option value="">Sắp xếp theo giá giảm</option>
+                        <option value="">Sắp xếp theo lượt like&nbsp;</option>
+                        <option value="">Sắp xếp theo tên&nbsp;</option>
                     </select>
                     <div class="clear"></div>
                 </div>
@@ -62,7 +61,7 @@
                             <a href="details.html"><img src="{{$item->linkimg}}" alt=""></a>
                             <a href="" class="faculty-name">{{$item->first_name.' '.$item->last_name}}</a>
                             <p class="faculty-price"><span>{{$item->skill}}</span></p>
-                            <p>{{$item->description}}</p>
+                            <p class="description-item">{{$item->description}}</p>
                             <p><a class="like-home-page">Rating: {{$item->statistical->responses}}</a><a class="dislike-home-page">
                                     Tags:@foreach($item->tags as $tag)
                                              <code style="background-color: #491c47">{{$tag->tag_content}}</code>
