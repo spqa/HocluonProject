@@ -288,6 +288,9 @@ content: url('../images/right-arrow.png') no-repeat 0 0;
 	line-height: 1.8em;
 	text-align:justify;
 }
+.images_1_of_3 .description-item{
+    height:75px;
+}
 .images_1_of_3 .button{
 	margin-top:1.3em;
 	line-height:1.9em;
