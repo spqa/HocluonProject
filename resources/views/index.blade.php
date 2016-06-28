@@ -62,7 +62,7 @@
                             <a href="" class="faculty-name">{{$item->first_name.' '.$item->last_name}}</a>
                             <p class="faculty-price"><span>{{$item->skill}}</span></p>
                             <p class="description-item">{{$item->description}}</p>
-                            <p><a class="like-home-page">Rating: {{$item->statistical->responses}}</a><a class="dislike-home-page">
+                            <p><a class="like-home-page">Rating: {{isset($item->statistical)? $item->statistical->responses:'0'}}</a><a class="dislike-home-page">
                                     Tags:@foreach($item->tags as $tag)
                                              <code style="background-color: #491c47">{{$tag->tag_content}}</code>
                                              @endforeach
@@ -73,9 +73,9 @@
                 </div>
                 <div class="section group">
                     <div class="grid_3_of_3 images_3_of_3">
-                        @if(isset($pagetest))
+
 {!! with(new \App\Pagination($teacher))->render() !!}
-                            @endif
+
                     </div>
                 </div>
             </div>
