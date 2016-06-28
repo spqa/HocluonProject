@@ -5,7 +5,7 @@
     <div class="grid_1_of_3 images_1_of_3 form-login">
         <div class="login">
             <h1>Register<span class="close-form">x</span></h1>
-            <form method="post" action="index.html">
+            <form method="post" action="{{ url('/register') }}">
                 <p><input type="text" name="name" value="{{ old('name') }}" placeholder="Name"></p>
                 <p><input type="email" name="email" value="{{ old('email') }}" placeholder="Email"></p>
                 <p><input type="password" name="password" value="" placeholder="Password"></p>
