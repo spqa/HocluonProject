@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '503333826533478',
+        'client_secret' => '73c05b20cde5605b668a991b938fae70',
+        'redirect' => 'http://hocluon.dev/auth/facebook/callback',
+    ],
+
 ];

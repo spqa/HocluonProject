@@ -12,7 +12,7 @@
     <div class="wrap">
         <div class="menu">
             <ul id="nav">
-                <li  id="selected"><a href="index.html">TRANG CHỦ</a></li>
+                <li  id="selected"><a href="{{ url('/') }}">TRANG CHỦ</a></li>
                 <li><a href="about.html">GIỚI THIỆU</a></li>
                 <li><a href="staff.html">CÁ NHÂN</a></li>
                 <li><a href="service.html">HỌC HỎI</a></li>
@@ -38,13 +38,22 @@
             </a>
         </div>
         <ul class="soc-icons">
-            <li class="login"><a href="#">Đăng nhập &nbsp;/</a></li>
-            <li class="register"><a href="#">Đăng ký</a></li>
-            <li class="avatar-homepage" style="display:none;"><a href="">Hi!<img src="images/icon_login.png" title="avatar" alt=""></a></li>
-            <li><a href=""><img src="images/facebook.png" title="facebook" alt=""></a></li>
-            <li><a href=""><img src="images/twitter.png" title="twitter" alt=""></a></li>
-            <li><a href=""><img src="images/youtube.png" title="youtube" alt=""></a></li>
-            <li><a href=""><img src="images/rss.png" title="rss" alt=""></a></li>
+            @if(Auth::guest())
+                <li class="login"><a href="{{ url('/login') }}">Đăng nhập &nbsp;/</a></li>
+                <li class="register"><a href="{{ url('/register') }}">Đăng ký</a></li>
+                <li class="avatar-homepage" style="display:none;"><a href="">Hi!<img src="images/icon_login.png" title="avatar" alt=""></a></li>
+                <li><a href="{{ url('/auth/facebook') }}"><img src="images/facebook.png" title="facebook" alt=""></a></li>
+                <li><a href=""><img src="images/twitter.png" title="twitter" alt=""></a></li>
+                <li><a href=""><img src="images/youtube.png" title="youtube" alt=""></a></li>
+                <li><a href=""><img src="images/rss.png" title="rss" alt=""></a></li>
+
+                @else
+                <span>{!! Auth::user()->name !!}</span>
+                    @if(isset(Auth::user()->socialAccount))
+                        <img src="{!! Auth::user()->socialAccount->avatar !!}" title="avatar">
+                        @endif
+                <p><a href="{{ url('/logout') }}">Logout</a></p>
+            @endif
         </ul>
         <div class="clear"></div>
     </div>

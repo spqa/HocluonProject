@@ -17,6 +17,6 @@ class SearchController extends Controller
 
         
         //dd($findTeacherByTag);
-        return view('search')->with('teacher',$findTag);
+        return view('index')->with('teacher',$findTag);
     }
 }

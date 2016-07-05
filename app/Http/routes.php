@@ -26,3 +26,5 @@ Route::get('search','SearchController@search');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/auth/facebook','SocialAuthController@redirectToProvider');
+Route::get('/auth/facebook/callback','SocialAuthController@handleProviderCallback');
